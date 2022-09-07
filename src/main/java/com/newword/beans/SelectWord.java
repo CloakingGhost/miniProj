@@ -56,6 +56,7 @@ public class SelectWord extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String word = request.getParameter("word");
+		System.out.println(word);
 		String url = "jdbc:mysql://localhost:3306/newword?useSSL=false&allowPublicKeyRetrieval=true";
 		String dbid = "newword";
 		String dbpw = "123456";
@@ -73,7 +74,7 @@ public class SelectWord extends HttpServlet {
 			pstmt.setString(1, word);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				
+				System.out.println(rs.getString(2));
 				//단어
 				request.setAttribute("means", rs.getString(2));
 				// 단어뜻

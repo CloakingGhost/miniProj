@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${word}
+<a href="https://www.youtube.com/results?search_query=${word}">가즈아</a> ${word}+++
 </body>
 </html>
