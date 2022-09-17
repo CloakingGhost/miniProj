@@ -55,8 +55,9 @@ public class SelectWord extends HttpServlet {
 	public void actionDo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String word = request.getParameter("word");
-		System.out.println(word);
+		Integer num = 2;
+//		String word = request.getParameter("word");
+		System.out.println(num);
 		String url = "jdbc:mysql://localhost:3306/newword?useSSL=false&allowPublicKeyRetrieval=true";
 		String dbid = "newword";
 		String dbpw = "123456";
@@ -71,15 +72,15 @@ public class SelectWord extends HttpServlet {
 			System.out.print("dd");
 			sql = "select * from newword where word = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, word);
+			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				System.out.println(rs.getString(2));
 				//단어
-				request.setAttribute("means", rs.getString(2));
+				request.setAttribute("word", rs.getString(2));
 				// 단어뜻
-				request.setAttribute("means", rs.getString(3));
-				rd = request.getRequestDispatcher("otherPage.jsp");
+				request.setAttribute("mean", rs.getString(3));
+				rd = request.getRequestDispatcher("mainPage.jsp");
 				rd.forward(request, response);
 
 			}
@@ -89,6 +90,8 @@ public class SelectWord extends HttpServlet {
 
 		} finally {
 			try {
+				pstmt.close();
+				rs.close();
 				conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
