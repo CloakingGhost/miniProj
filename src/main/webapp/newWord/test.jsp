@@ -8,9 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-	
-=======
 	<%
 	request.setCharacterEncoding("utf-8");
 	String word = request.getParameter("word");
@@ -53,6 +50,5 @@
 		}
 	}
 	%>
->>>>>>> refs/remotes/origin/stage1
 </body>
 </html>
