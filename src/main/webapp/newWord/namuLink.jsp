@@ -1,21 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-    <%request.setCharacterEncoding("utf-8"); %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<!-- include in mainPage.jsp -->
-<iframe width="560" height="315"
-		src="https://namu.wiki/w/${words.word} }"></iframe>
-
-</body>
-
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,5 +9,4 @@
 <body>
 <!-- include in index.jsp -->
 </body>
->>>>>>> refs/remotes/origin/stage1
 </html>
