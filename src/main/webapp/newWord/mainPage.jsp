@@ -10,8 +10,8 @@
 <body>
 
 	<form action="select.do" method="post">
-		<input type="text" name="word"> <input type="submit"
-			value="선택">
+		<input type="text" name="word"> 
+		<input type="submit" value="선택">
 	</form>
 
 </body>
