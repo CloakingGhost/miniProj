@@ -58,9 +58,9 @@ public class SelectWord extends HttpServlet {
 		Integer num = 2;
 //		String word = request.getParameter("word");
 		System.out.println(num);
-		String url = "jdbc:mysql://localhost:3306/newword?useSSL=false&allowPublicKeyRetrieval=true";
-		String dbid = "newword";
-		String dbpw = "123456";
+		String url = "jdbc:mysql://localhost:3306/words?useSSL=false&allowPublicKeyRetrieval=true";
+		String dbid = "words";
+		String dbpw = "words";
 		String sql = "";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -70,7 +70,7 @@ public class SelectWord extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 			System.out.print("dd");
-			sql = "select * from newword where word = ?";
+			sql = "select * from words where word_id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
