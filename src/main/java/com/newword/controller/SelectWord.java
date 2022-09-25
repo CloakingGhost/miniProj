@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
+
 
 /**
  * Servlet implementation class SelectWord
@@ -37,12 +37,9 @@ public class SelectWord extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json; charset=UTF-8");
-		String str = request.getParameter("strWord");
-		JSONObject json1 = new JSONObject(str);
-		String aaa = json1.getString("jsonWord");
-		System.out.println(aaa);
+		request.setCharacterEncoding("UTF-8");
+		String str = request.getParameter("jsonWord");
 //		for(int i=0;i<str.size;i++){
 //		System.out.print(str[i]);
 //			

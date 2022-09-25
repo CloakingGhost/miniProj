@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+#wrapping {
+	height: 90px;
+	border: 1px solid gray;
+}
+
+#word {
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#mean {
+	display: none;
+	margin-bottom: 30px;
+}
+
+.wd {
+	cursor: pointer;
+}
