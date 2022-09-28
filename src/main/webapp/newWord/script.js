@@ -1,9 +1,8 @@
 $(document).ready(function() {
-
+	// #page1
 	// select word
 	let words = new Set();
 	$("#btn1").on("click", function() {
-		let wd = $("#word").text().trim();
 		// ajax
 		$.ajax({
 			type: "post",
@@ -15,8 +14,8 @@ $(document).ready(function() {
 				for (i in newStr) {
 					$("#word").text(i)
 					$("#mean").replaceWith(
-						'<div id="mean">' + newStr[i]
-						+ '</div>');
+						'<span id="mean">' + newStr[i]
+						+ '</span>');
 					$("#saveWord").attr("value", i);
 					words.add(i);
 				}
@@ -41,12 +40,12 @@ $(document).ready(function() {
 	})
 	// show mean of word end
 
-
+	// #page2
 	//youtube link
-	let API_KEY = "AIzaSyDAd9oVE_UUmSSUZD2KjJabNmi4cRXOyxI";
+	let API_KEY = "AIzaSyCuwW3MULuG7iX3RIUQuwqCsgN9KhzoD1k";
 	let video = "";
 	let wordOfForm = document.getWord.word.value; // .value 를 붙히면 원하는 값임
-	let maxResults = 4
+	let maxResults = 7
 
 	videoSearch(wordOfForm, API_KEY, maxResults);
 
@@ -56,29 +55,37 @@ $(document).ready(function() {
 		$.get(
 			"https://www.googleapis.com/youtube/v3/search?part=snippet&key=" +
 			key +
-			"&maxResults=" +
+			"&videoEmbeddable=true&maxResults=" +
+
 			maxResults +
 			"&type=video&q=" +
 			word,
 			function(data) {
 				console.log(data);
-				data.items.forEach((item) => {
+				let items = data.items
+				$.each(items, function(index, item) {
 					video = `
-            <iframe width="560" height="315" src="//www.youtube.com/embed/${item.id.videoId}"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            `;
-					$("#videos").append(video);
-				});
+			            <iframe width="600" height="400" src="//www.youtube.com/embed/${item.id.videoId}"
+			            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			            `;
+					$('#video' + (index + 1)).append(
+						'<div class="videos">' +
+						video + '</div>'
+					);
+				})
 			}
+
 		);
 	}
 	// youtube end
 	// connect to youtube by word
-	$(document).on('click', '.wd', function() {
+	$(document).on('click', '.words', function() {
 		let text = $(this).text();
-		$('#videos').empty()
-		videoSearch(text, API_KEY, maxResults)
+		$('.swiper-slide').empty();
+		videoSearch(text, API_KEY, maxResults);
 	})
 	// connect to youtube by word end
+
+
+
 });
-
-

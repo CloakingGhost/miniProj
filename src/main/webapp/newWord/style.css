@@ -1,8 +1,25 @@
 @charset "UTF-8";
+/* #page1 */
+* {
+	font-family: 'Jua', sans-serif;
+	font-size: 20px;
+}
 
-#wrapping {
+.container {
+	position: relative;
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	margin: 40px;
+}
+
+.wrapping {
+	position: relative;
 	height: 90px;
 	border: 1px solid gray;
+	border-radius: 30px;
 }
 
 #word {
@@ -10,14 +27,58 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	display: flex;
 }
 
 #mean {
 	display: none;
-	margin-bottom: 30px;
 }
 
-.wd {
+#btn1 {
+	position: relative;
+	margin-top: 20px;
+}
+
+#btn2 {
+	position: relative;
+}
+
+#showBtn {
+	position: relative;
+	margin-top: 27px;
+}
+
+.row {
+	border-top-width: 1px;
+	padding-top: 33px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+span {
+	position: relative;
+	right: 10px;
+	top: 33px;
+	text-align: center;
+}
+
+/* page2 */
+.words {
 	cursor: pointer;
+}
+
+.section, .aside {
+	float: left;
+	height: 200px;
+}
+
+#wordArr {
+	margin-top: 50px;
+}
+
+.videos {
+	margin-top: 50px;
+}
+
+#backBtn {
+	position: left;
 }

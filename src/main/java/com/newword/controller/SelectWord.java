@@ -37,25 +37,7 @@ public class SelectWord extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("application/json; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		String str = request.getParameter("jsonWord");
-//		for(int i=0;i<str.size;i++){
-//		System.out.print(str[i]);
-//			
-//		}
-//		Word wd = new Word();
-//		// 콘솔을 통해 입력된 set의 값을 확인
-//		Iterator<String> it = wd.getIt();
-//		String itVal = wd.getIt().next();
-//		while (it.hasNext()) {
-//			System.out.println(itVal);
-//		}
-//		// otherPage에서 set의 값을 출력하기위해 Iterator 송출
-//		HttpSession session = request.getSession();
-//		session.setAttribute("words",it);
-
-//		goOtherPage(request, response);
+		
 	}
 
 	/**
@@ -105,7 +87,7 @@ public class SelectWord extends HttpServlet {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				wordAmount = rs.getInt(1);
-				wordId = (int) (Math.random() * wordAmount) + 1;
+				wordId = (int) ((Math.random()*Math.random()) * wordAmount) + 1;
 				System.out.println("단어 수: " + wordAmount);
 			}
 

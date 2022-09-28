@@ -12,7 +12,6 @@
 <body>
 	<br>
 	<br>
-
 	<div class="container">
 		<img src="../image/main.jpg" width="500px" /><br />
 
@@ -26,7 +25,6 @@
 						<div id="word"></div>
 					</div>
 				</div>
-
 				<div class="col-md-2">
 					<!-- 랜덤선택 버튼 -->
 					<button type="button" id="btn1" class="btn btn-danger btn-label">

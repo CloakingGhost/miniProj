@@ -11,7 +11,6 @@ public class Word {
 		super();
 	}
 
-
 	public Word(String word, String mean) {
 
 		this.word = word;
